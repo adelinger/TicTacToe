@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/player2"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="450dp"
+        android:ems="10"
+        android:inputType="none"
+        android:text="Player 2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/field9"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="230dp"
+        android:background="#3498db"
+        android:textColor="#FFFFFF"
+        android:textSize="150px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/field3"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="10dp"
+        android:background="#3498db"
+        android:textSize="150px"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/field6"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="120dp"
+        android:background="#3498db"
+        android:textSize="150px"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/field8"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginRight="250dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="230dp"
+        android:textSize="150px"
+        android:background="#3498db"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/field5"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginRight="250dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="120dp"
+        android:background="#3498db"
+        android:textSize="150px"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/field2"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginRight="250dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="10dp"
+        android:background="#3498db"
+        android:textSize="150px"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/field1"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="270dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="150px"
+        android:background="#3498db"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/field4"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="270dp"
+        android:layout_marginStart="10dp"
+        android:textSize="150px"
+        android:layout_marginTop="120dp"
+        android:background="#3498db"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/field7"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="270dp"
+        android:layout_marginStart="10dp"
+        android:textSize="150px"
+        android:layout_marginTop="230dp"
+        android:background="#3498db"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="163dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="350dp"
+        android:background="#2980b9"
+        android:text="Nova runda"
+        android:textColor="#FFFFFF"
+        android:textSize="50px"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player1"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="250dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="250dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="450dp"
+        android:ems="10"
+        android:inputType="none"
+        android:text="Player 1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
