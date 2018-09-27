@@ -6,46 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:id="@+id/someNewView"
+    android:background="?android:attr/windowBackground"
     tools:layout_editor_absoluteY="81dp">
-
-    <FrameLayout
-        android:id="@+id/nFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
 
     <Button
         android:id="@+id/twoPlayersButton"
         android:layout_width="243dp"
-        android:layout_height="107dp"
+        android:layout_height="138dp"
         android:layout_marginEnd="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="180dp"
         android:background="#3498db"
-        android:text="2 Igrača"
+        android:text="Kreni"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/onePlayerButton"
-        android:layout_width="243dp"
-        android:layout_height="107dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="50dp"
-        android:background="#3498db"
-        android:text="1 igrač"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/twoPlayersButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-5385963311823976~1306362252"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

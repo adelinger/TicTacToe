@@ -6,8 +6,13 @@ import android.support.v7.app.AppCompatActivity
 import android.webkit.WebView
 import android.widget.Button
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.twoplayer.*
 import kotlinx.android.synthetic.main.twoplayer.view.*
+import android.content.DialogInterface
+import android.support.v7.app.AlertDialog
 
 
 class twoPlayerGame : AppCompatActivity() {
@@ -18,30 +23,70 @@ class twoPlayerGame : AppCompatActivity() {
     var X_turn = true
     var O_turn = false
 
+    lateinit var firstPlayer  : String
+    lateinit var secondPlayer : String
+    lateinit var mAdView : AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.twoplayer)
 
-        var fieldOne = findViewById<Button>(R.id.field1)
-        var fieldTwo = findViewById<Button>(R.id.field2)
+        var fieldOne   = findViewById<Button>(R.id.field1)
+        var fieldTwo   = findViewById<Button>(R.id.field2)
         var fieldThree = findViewById<Button>(R.id.field3)
-        var fieldFour = findViewById<Button>(R.id.field4)
-        var fieldFive = findViewById<Button>(R.id.field5)
-        var fieldSix = findViewById<Button>(R.id.field6)
+        var fieldFour  = findViewById<Button>(R.id.field4)
+        var fieldFive  = findViewById<Button>(R.id.field5)
+        var fieldSix   = findViewById<Button>(R.id.field6)
         var fieldSeven = findViewById<Button>(R.id.field7)
         var fieldEight = findViewById<Button>(R.id.field8)
-        var fieldNine = findViewById<Button>(R.id.field9)
+        var fieldNine  = findViewById<Button>(R.id.field9)
+
+        firstPlayer  = intent.getStringExtra("firstPlayer")
+        secondPlayer = intent.getStringExtra("secondPlayer")
+
+        playerIndicator.text = "Na potezu je: " + firstPlayer
+
+        player1.text = firstPlayer  + ":" +" " + "0"
+        player2.text = secondPlayer + ":" + " "+ "0"
+
+        MobileAds.initialize(this, "ca-app-pub-5385963311823976/4451400341")
+
+        mAdView = findViewById(R.id.adViewTwo)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+        setToZero.setOnClickListener {
+
+            AlertDialog.Builder(this)
+                    .setTitle("Reset")
+                    .setMessage("Jeste li sigurni da želite postaviti rezultat na 0?")
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setPositiveButton(android.R.string.yes, DialogInterface.OnClickListener
+                    { dialog, whichButton ->
+                        X_turn = true
+                        O_turn = false
+                        result1 = 0
+                        result2 = 0
+
+                        player1.text = firstPlayer  + ":" +" " + "0"
+                        player2.text = secondPlayer + ":" + " "+ "0"
+
+                        startNewRound()
+                    })
+                    .setNegativeButton(android.R.string.no, null).show()
+        }
 
         fieldOne.setOnClickListener {
             if (X_turn) {
                 fieldOne.text = "X"
                 X_turn = false
                 O_turn = true
+                playerIndicator.text = "Na potezu je: " + secondPlayer
             } else {
                 fieldOne.text = "O"
                 X_turn = true
                 O_turn = false
+                playerIndicator.text = "Na potezu je: " + firstPlayer
             }
             fieldOne.isEnabled = false
             checkIfMatchIsDone()
@@ -51,10 +96,12 @@ class twoPlayerGame : AppCompatActivity() {
                 fieldTwo.text = "X"
                 X_turn = false
                 O_turn = true
+                playerIndicator.text = "Na potezu je: " + secondPlayer
             } else {
                 fieldTwo.text = "O"
                 X_turn = true
                 O_turn = false
+                playerIndicator.text = "Na potezu je: " + firstPlayer
             }
             fieldTwo.isEnabled = false
             checkIfMatchIsDone()
@@ -64,10 +111,12 @@ class twoPlayerGame : AppCompatActivity() {
                 fieldThree.text = "X"
                 X_turn = false
                 O_turn = true
+                playerIndicator.text = "Na potezu je: " + secondPlayer
             } else {
                 fieldThree.text = "O"
                 X_turn = true
                 O_turn = false
+                playerIndicator.text = "Na potezu je: " + firstPlayer
             }
             fieldThree.isEnabled = false
             checkIfMatchIsDone()
@@ -77,10 +126,12 @@ class twoPlayerGame : AppCompatActivity() {
                 fieldFour.text = "X"
                 X_turn = false
                 O_turn = true
+                playerIndicator.text = "Na potezu je: " + secondPlayer
             } else {
                 fieldFour.text = "O"
                 X_turn = true
                 O_turn = false
+                playerIndicator.text = "Na potezu je: " + firstPlayer
             }
             fieldFour.isEnabled = false
             checkIfMatchIsDone()
@@ -90,10 +141,12 @@ class twoPlayerGame : AppCompatActivity() {
                 fieldFive.text = "X"
                 X_turn = false
                 O_turn = true
+                playerIndicator.text = "Na potezu je: " + secondPlayer
             } else {
                 fieldFive.text = "O"
                 X_turn = true
                 O_turn = false
+                playerIndicator.text = "Na potezu je: " + firstPlayer
             }
             fieldFive.isEnabled = false
             checkIfMatchIsDone()
@@ -103,10 +156,12 @@ class twoPlayerGame : AppCompatActivity() {
                 fieldSix.text = "X"
                 X_turn = false
                 O_turn = true
+                playerIndicator.text = "Na potezu je: " + secondPlayer
             } else {
                 fieldSix.text = "O"
                 X_turn = true
                 O_turn = false
+                playerIndicator.text = "Na potezu je: " + firstPlayer
             }
             fieldSix.isEnabled = false
             checkIfMatchIsDone()
@@ -116,10 +171,12 @@ class twoPlayerGame : AppCompatActivity() {
                 fieldSeven.text = "X"
                 X_turn = false
                 O_turn = true
+                playerIndicator.text = "Na potezu je: " + secondPlayer
             } else {
                 fieldSeven.text = "O"
                 X_turn = true
                 O_turn = false
+                playerIndicator.text = "Na potezu je: " + firstPlayer
             }
             fieldSeven.isEnabled = false
             checkIfMatchIsDone()
@@ -129,10 +186,12 @@ class twoPlayerGame : AppCompatActivity() {
                 fieldEight.text = "X"
                 X_turn = false
                 O_turn = true
+                playerIndicator.text = "Na potezu je: " + secondPlayer
             } else {
                 fieldEight.text = "O"
                 X_turn = true
                 O_turn = false
+                playerIndicator.text = "Na potezu je: " + firstPlayer
             }
             fieldEight.isEnabled = false
             checkIfMatchIsDone()
@@ -142,10 +201,12 @@ class twoPlayerGame : AppCompatActivity() {
                 fieldNine.text = "X"
                 X_turn = false
                 O_turn = true
+                playerIndicator.text = "Na potezu je: " + secondPlayer
             } else {
                 fieldNine.text = "O"
                 X_turn = true
                 O_turn = false
+                playerIndicator.text = "Na potezu je: " + firstPlayer
             }
             fieldNine.isEnabled = false
             checkIfMatchIsDone()
@@ -216,12 +277,24 @@ class twoPlayerGame : AppCompatActivity() {
             disableAllFields()
             return
         }
-
+        if (!field1.isEnabled && !field2.isEnabled && !field3.isEnabled && !field4.isEnabled  &&
+            !field5.isEnabled && !field6.isEnabled && !field7.isEnabled && !field8.isEnabled  && !field9.isEnabled)
+        {
+            showWinnerMessage("")
+            return
+        }
     }
 
     fun showWinnerMessage(winner: String) {
-        val toast = Toast.makeText(this, "Imamo pobjednika. Pobijedio je: " + winner + " ", Toast.LENGTH_LONG)
-        toast.show()
+        if (winner == "X") {
+           playerIndicator.text = "Pobjednik je: " + firstPlayer
+        }
+        if (winner == "O") {
+            playerIndicator.text = "Pobjednik je: " + secondPlayer
+        }
+        if(winner == "") {
+            playerIndicator.text = "Neriješno!"
+        }
     }
 
     fun changeTileColor(tile1: Button, tile2: Button, tile3: Button) {
@@ -256,15 +329,15 @@ class twoPlayerGame : AppCompatActivity() {
         field7.isEnabled = true; field7.text = ""; field7.setBackgroundColor(Color.rgb(52,152,219))
         field8.isEnabled = true; field8.text = ""; field8.setBackgroundColor(Color.rgb(52,152,219))
         field9.isEnabled = true; field9.text = ""; field9.setBackgroundColor(Color.rgb(52,152,219))
+        playerIndicator.text = "Na potezu je: " + firstPlayer
     }
     fun addResult (field:Button)
     {
         if(field.text  == "X") result1++
         if(field.text  == "O") result2++
 
-        player1.text = result1.toString()
-        player2.text = result2.toString()
-
+        player1.text = firstPlayer  + " " + result1.toString()
+        player2.text = secondPlayer + " " + result2.toString()
     }
 
 }
